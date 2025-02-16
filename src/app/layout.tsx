@@ -5,6 +5,12 @@ import { ThemeProvider } from "./components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Helper function for asset paths
+const getBasePath = () => {
+  if (process.env.NODE_ENV === "development") return "";
+  return "/webmelol";
+};
+
 export const viewport = {
   width: "device-width",
   initialScale: 1,
@@ -56,7 +62,7 @@ export const metadata: Metadata = {
     description: "Custom websites for local businesses and professionals",
     images: [
       {
-        url: "/og-image.jpg",
+        url: `${getBasePath()}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: "WebMeLOL Preview",
@@ -67,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "WebMeLOL - Professional Web Development",
     description: "Custom websites for local businesses and professionals",
-    images: ["/og-image.jpg"],
+    images: [`${getBasePath()}/og-image.jpg`],
   },
   verification: {
     google: "KVnNEm36hqcqvuNSt2_5kzcwSHapDBBZrqnNm0X2iTk",
@@ -83,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href={`${getBasePath()}/favicon.ico`} />
         <link rel="canonical" href="https://webmelol.com" />
         <meta name="theme-color" content="#000000" />
 
@@ -97,7 +103,7 @@ export default function RootLayout({
               name: "WebMeLOL",
               description:
                 "Custom websites for local businesses and professionals",
-              image: "https://webmelol.com/og-image.jpg",
+              image: `https://webmelol.com${getBasePath()}/og-image.jpg`,
               url: "https://webmelol.com",
               telephone: "",
               address: {
