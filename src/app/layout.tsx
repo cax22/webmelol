@@ -5,7 +5,14 @@ import { ThemeProvider } from "./components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://webmelol.com"),
   title: {
     default: "WebMeLOL - Professional Web Development",
     template: "%s | WebMeLOL",
@@ -49,7 +56,7 @@ export const metadata: Metadata = {
     description: "Custom websites for local businesses and professionals",
     images: [
       {
-        url: "/og-image.jpg", // Add this image to your public folder
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "WebMeLOL Preview",
@@ -62,13 +69,8 @@ export const metadata: Metadata = {
     description: "Custom websites for local businesses and professionals",
     images: ["/og-image.jpg"],
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-  },
   verification: {
-    google: "KVnNEm36hqcqvuNSt2_5kzcwSHapDBBZrqnNm0X2iTk", // Add your Google verification code
+    google: "KVnNEm36hqcqvuNSt2_5kzcwSHapDBBZrqnNm0X2iTk",
   },
   category: "technology",
 };
